@@ -1,11 +1,6 @@
-//
 //  Variable.h
-//  CompilerProject3
-//
-//  Created by PatrickDD on 2021/5/17.
-//
-#include "Defines.h"
 
+#include "Defines.h"
 
 #ifndef Variable_h
 #define Variable_h
@@ -162,7 +157,7 @@ public:
             }
         }
         
-        printf("[ERROR] Variable '%s' has not been defined.\n", variable_name.c_str());
+        printf("[ERROR] La variable '%s' no se ha definido.\n", variable_name.c_str());
         return __EMPTY_SCOPE__;
     }
     
@@ -172,7 +167,7 @@ public:
             get_variable(scope, variable_name) = v;
             return true;
         }
-        printf("[ERROR] Variable '%s' is already defined\n", variable_name.c_str());
+        printf("[ERROR] La variable '%s' ya se ha definido\n", variable_name.c_str());
         return false;
     }
     
@@ -182,7 +177,7 @@ public:
             u.val = v.val;
         }
         else{
-            printf("[ERROR] Cannot assign variable '%s' from '%s' to '%s'\n",
+            printf("[ERROR] No se puede asignar variable '%s' de '%s' a '%s'\n",
                    variable_name.c_str(), u.get_type().c_str(), v.get_type().c_str());
         }
     }
@@ -221,7 +216,7 @@ public:
             }
         }
         
-        printf("[ERROR] Calculation between '%s' and '%s' is forbidden\n", a.get_type().c_str(), b.get_type().c_str());
+        printf("[ERROR] Cálculo entre '%s' y '%s' está prohibido\n", a.get_type().c_str(), b.get_type().c_str());
 
         return Variable(__Empty__);
     }
@@ -229,12 +224,12 @@ public:
     void print_variables(){
         for(auto i : variables){
             printf("-------------\n");
-            printf("Scope : %d\t|\n", i.first);
+            printf("Rango : %d\t|\n", i.first);
             printf("-----------------------------------------\n");
             for(auto k : i.second){
                 string name = k.first;
                 Variable &v = k.second;
-                printf("Variable : %s(%s), Value : %s\n", name.c_str(), v.get_type().c_str(), v.get_val().c_str());
+                printf("Variable : %s(%s), Valor: %s\n", name.c_str(), v.get_type().c_str(), v.get_val().c_str());
             }
             printf("-----------------------------------------\n\n\n");
         }

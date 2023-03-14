@@ -1,9 +1,4 @@
-//
 //  SemanticAnalyzer.h
-//  CompilerProject3
-//
-//  Created by PatrickDD on 2021/5/12.
-//
 
 #include "Defines.h"
 #include "Variable.h"
@@ -13,8 +8,6 @@
 
 #ifndef SemanticAnalyzer_h
 #define SemanticAnalyzer_h
-
-
 
 class SemanticAnalyzer {
 public:
@@ -201,7 +194,7 @@ public:
                     if (Factor.sons.size()>1){
                         
                         if(!(v.get_type()==_INT_ || v.get_type()==_FLOAT_)){
-                            printf("[ERROE] Only 'int' or 'float' variables can do '++'/'--' calucalation\n");
+                            printf("[ERROR] Solo las variables de tipo 'int' o 'float' pueden realizar iteraciones '++'/'--'\n");
                             break;
                         }
                         
@@ -316,6 +309,5 @@ public:
     }
     
 };
-
 
 #endif /* SemanticAnalyzer_h */

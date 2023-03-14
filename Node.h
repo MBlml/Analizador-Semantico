@@ -1,10 +1,4 @@
-//
 //  Node.h
-//  CompilerProject3
-//
-//  Created by PatrickDD on 2021/5/10.
-//
-
 #ifndef Node_h
 #define Node_h
 
