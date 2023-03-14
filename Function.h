@@ -27,14 +27,14 @@ public:
             functions[function_name] = Function(parameters, return_type);
         }
         else{
-            printf("[ERROR] Funcion '%s' ya ha sido definida\n", function_name.c_str());
+            printf("[ERROR] La funcion '%s' ya ha sido definida\n", function_name.c_str());
         }
         
     }
     
     void print_functions(){
         for(auto function : functions){
-            printf("--------------------\n");
+            printf("-----------------------------------------\n");
             printf("Nombre de la funcion : %s\t|\n", function.first.c_str());
             printf("-----------------------------------------\n");
             printf("Parametros : ");
@@ -43,7 +43,6 @@ public:
             }
             printf("\n");
             printf("Tipo de retorno : %s\n", TYPE[function.second.return_type].c_str());
-            
             printf("-----------------------------------------\n\n\n");
         }
     }
