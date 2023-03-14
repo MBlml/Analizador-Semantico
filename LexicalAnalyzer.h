@@ -1,10 +1,4 @@
-//
 //  LexicalAnalyzer.h
-//  CompilerProject1
-//
-//  Created by PatrickDD on 2021/4/12.
-//
-
 
 #ifndef LexicalAnalyzer_h
 #define LexicalAnalyzer_h
@@ -26,7 +20,7 @@ public:
     
     void print_key_word_map(){
         printf("-----------------------------------------\n");
-        printf("[INFO] Key Word Map : \n");
+        printf("[INFO] Mapa de palabras clave : \n");
         printf("-----------------------------------------\n");
         for(auto i : KEY_WORDS_MAP){
             printf("%s\t%d\n", i.first.c_str(), i.second);
@@ -36,7 +30,7 @@ public:
     
     void print_lexical_analysis(){
         printf("-----------------------------------------\n");
-        printf("[INFO] results of the lexical analysis : \n");
+        printf("[INFO] resultados del analisis lexico : \n");
         printf("-----------------------------------------\n");
         for(auto i : lex_result){
             vector<string> word_info = i.first;
@@ -50,19 +44,19 @@ public:
         
 
         printf("-----------------------------------------\n");
-        printf("[INFO] occurrences of different words :  \n");
+        printf("[INFO] ocurrencias de diferentes palabras :  \n");
         printf("-----------------------------------------\n");
         for(auto i:word_type_count){
             string word = i.first;
             int count = i.second;
-            printf("%s : %d time(s)\n", word.c_str(), count);
+            printf("%s : %d tiempo(s)\n", word.c_str(), count);
         }
         printf("\n\n");
         
         
 
         printf("-----------------------------------------\n");
-        printf("[INFO] total : %lu word(s) , %d row(s)\n", lex_result.size(), row);
+        printf("[INFO] Total : %lu palabra(s) , %d fila(s)\n", lex_result.size(), row);
         printf("-----------------------------------------\n\n");
     }
     
@@ -140,7 +134,7 @@ private:
         while(cur+n < code.length()){
             
             if(code[cur+n] == '\n'){
-                printf("[ERROR] unqualified string constant '%s' at row [%d] col[%d-%d]\n", code.substr(cur, n).c_str() ,row, col, col+n-1);
+                printf("[ERROR] constante de cadena no calificada '%s' at fila [%d] col[%d-%d]\n", code.substr(cur, n).c_str() ,row, col, col+n-1);
                break;
             }
             
@@ -210,7 +204,7 @@ private:
             while(!is_operator(code[cur+n]) && !is_space(code[cur+n])){
                 n++;
             }
-            printf("[ERROR] unqualified Id '%s' at row [%d] col[%d-%d]\n", code.substr(cur, n).c_str() ,row, col, col+n-1);
+            printf("[ERROR] Id '%s' no cualificado en la fila [%d] col[%d-%d]\n", code.substr(cur, n).c_str() ,row, col, col+n-1);
         }
         else{
             num = code.substr(cur, n);
