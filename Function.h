@@ -1,14 +1,8 @@
-//
 //  Function.h
-//  CompilerProject3
-//
-//  Created by PatrickDD on 2021/5/17.
-//
+
 #include "Defines.h"
 #ifndef Function_h
 #define Function_h
-
-
 
 class Function{
 public:
@@ -33,7 +27,7 @@ public:
             functions[function_name] = Function(parameters, return_type);
         }
         else{
-            printf("[ERROR] Function '%s' is already defined\n", function_name.c_str());
+            printf("[ERROR] Funcion '%s' ya ha sido definida\n", function_name.c_str());
         }
         
     }
@@ -41,19 +35,18 @@ public:
     void print_functions(){
         for(auto function : functions){
             printf("--------------------\n");
-            printf("Function Name : %s\t|\n", function.first.c_str());
+            printf("Nombre de la funcion : %s\t|\n", function.first.c_str());
             printf("-----------------------------------------\n");
-            printf("Parameters : ");
+            printf("Parametros : ");
             for(auto parameter : function.second.parameters){
                 printf("%s(%s)\t",  parameter.second.c_str(), TYPE[parameter.first].c_str());
             }
             printf("\n");
-            printf("Return type : %s\n", TYPE[function.second.return_type].c_str());
+            printf("Tipo de retorno : %s\n", TYPE[function.second.return_type].c_str());
             
             printf("-----------------------------------------\n\n\n");
         }
     }
-    
 };
 
 #endif /* Function_h */
