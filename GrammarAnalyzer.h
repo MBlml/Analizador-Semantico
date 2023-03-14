@@ -1,73 +1,70 @@
-//
 //  GrammarAnalyzer.h
-//  CompilerProject2
-//
-//  Created by PatrickDD on 2021/4/18.
-//
 
 #include "Defines.h"
 #include "Node.h"
 
 #ifndef GrammarAnalyzer_h
 #define GrammarAnalyzer_h
-// PROGRAM -> HEADER MAIN
-// MAIN -> int main() Block
-// Block -> { Stmts }
-// Stmts -> Stmt Stmts | Empty
-// Stmt -> Asig_E ; | Asig_C ; | Asig_S ; |
-//         Decl ; | break ; | continue; |
-//         DO_WHILE ; | IF | WHILE | DO_WHILE ; |
-//         RETURN ; | SWITCH | FunCall ;
 
-// HEADER -> H_Stmts
-// H_Stmts -> H_Stmt H_Stmts | Empty
-// H_Stmt -> FunDef | Decl ;
+/*
+PROGRAM -> HEADER MAIN
+MAIN -> int main() Block
+Block -> { Stmts }
+Stmts -> Stmt Stmts | Empty
+Stmt -> Asig_E ; | Asig_C ; | Asig_S ; |
+        Decl ; | break ; | continue; |
+        DO_WHILE ; | IF | WHILE | DO_WHILE ; |
+        RETURN ; | SWITCH | FunCall ;
 
-// IF -> if ( Expr ) Block |
-//       if ( Expr ) Block ELSE |
-//       if ( Expr ) Block ELSE_IF ELSE
-// ELSE_IF -> else if ( Expr ) Block | else if ( Expr ) Block ELSE_IF
-// ELSE -> else Block
+HEADER -> H_Stmts
+H_Stmts -> H_Stmt H_Stmts | Empty
+H_Stmt -> FunDef | Decl ;
 
-// WHILE -> while ( Expr ) Block
-// DO_WHILE -> do Block while ( Expr )
+IF -> if ( Expr ) Block |
+      if ( Expr ) Block ELSE |
+      if ( Expr ) Block ELSE_IF ELSE
+ELSE_IF -> else if ( Expr ) Block | else if ( Expr ) Block ELSE_IF
+ELSE -> else Block
 
-// SWITCH -> switch ( Expr ) { CASES DEFAULT }
-// CASES -> CASE | CASE CASES
-// CASE -> case Const : Stmts
-// DEFAULT -> default : Stmts
-// Const -> Number | true | false
+WHILE -> while ( Expr ) Block
+DO_WHILE -> do Block while ( Expr )
 
-// RETURN -> return Expr
+SWITCH -> switch ( Expr ) { CASES DEFAULT }
+CASES -> CASE | CASE CASES
+CASE -> case Const : Stmts
+DEFAULT -> default : Stmts
+Const -> Number | true | false
 
-// Asig_C -> Id Asig_C_Op Expr
-// Asig_C_Op -> += | -= | /= | *= |
-//              ^= | &= | |= | %= |
-//              ~= | !=
-// Asig_S -> Id ++ | Id --
-// Asig_E -> Id = Expr
+RETURN -> return Expr
 
-// FunDef -> Type FunName ( ParasDef ) Block
-// ParasDef -> ParaDef | ParaDef , ParasDef | Empty
-// ParaDef -> Type Id
+Asig_C -> Id Asig_C_Op Expr
+Asig_C_Op -> += | -= | /= | *= |
+             ^= | &= | |= | %= |
+             ~= | !=
+Asig_S -> Id ++ | Id --
+Asig_E -> Id = Expr
 
-// FunCall -> FunName ( Paras )
-// Paras -> Para | Para , Paras | Empty
-// Para -> Expr
+FunDef -> Type FunName ( ParasDef ) Block
+ParasDef -> ParaDef | ParaDef , ParasDef | Empty
+ParaDef -> Type Id
 
-// Decl -> Type Descs
-// Descs -> Desc | Desc , Descs
-// Desc -> Id | Asig_E
-// Type -> bool | char | int | double | float | string
+FunCall -> FunName ( Paras )
+Paras -> Para | Para , Paras | Empty
+Para -> Expr
 
-// Expr -> Factor | Expr BinOp Expr
-// Factor -> Number | ( Expr ) | Id | FunCall | SingOp Factor
-// BinOp -> || ｜ && ｜ | ｜ ^ ｜ & ｜ != ｜
-//          == ｜ > ｜ >= ｜ <= ｜ < ｜ << ｜
-//          >> ｜ + ｜ - ｜ * ｜ / ｜ %
-// SingOp -> ! | ~ | - | ++ | --
-// Number -> Decimal_Number | Octal_Number | Hexademical_Number
+Decl -> Type Descs
+Descs -> Desc | Desc , Descs
+Desc -> Id | Asig_E
+Type -> bool | char | int | double | float | string
 
+Expr -> Factor | Expr BinOp Expr
+Factor -> Number | ( Expr ) | Id | FunCall | SingOp Factor
+BinOp -> || ｜ && ｜ | ｜ ^ ｜ & ｜ != ｜
+         == ｜ > ｜ >= ｜ <= ｜ < ｜ << ｜
+         >> ｜ + ｜ - ｜ * ｜ / ｜ %
+SingOp -> ! | ~ | - | ++ | --
+Number -> Decimal_Number | Octal_Number | Hexademical_Number
+*/
 
 class GrammarAnalyzer {
     
@@ -139,7 +136,7 @@ private:
             
             node.add_son(Node("Error("+symbol+")"));
             cur--;
-            printf("[ERROR] Miss %s after '%s' [%s] - [%s]\n", symbol.c_str(), get_word().c_str(), lex_result[cur].first[1].c_str(), lex_result[cur].first[2].c_str());
+            printf("[ERROR] Falta %s despues de '%s' [%s] - [%s]\n", symbol.c_str(), get_word().c_str(), lex_result[cur].first[1].c_str(), lex_result[cur].first[2].c_str());
             cur++;
         }
     }
