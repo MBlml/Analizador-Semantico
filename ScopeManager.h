@@ -1,13 +1,7 @@
-//
 //  ScopeManager.h
-//  CompilerProject3
-//
-//  Created by PatrickDD on 2021/5/17.
-//
 
 #ifndef ScopeManager_h
 #define ScopeManager_h
-
 
 class ScopeManager{
 private:
