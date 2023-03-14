@@ -1,9 +1,4 @@
-//
 //  Defitions.h
-//  Compiler_Porject1
-//
-//  Created by PatrickDD on 2021/3/29.
-//
 
 #ifndef Defines_h
 #define Defines_h
@@ -15,19 +10,21 @@
 #include <sstream>
 #include <algorithm>
 
+//Definicion de macros principales
 #define _INT_ "int"
 #define _FLOAT_ "float"
 #define _BOOL_ "bool"
 #define _VOID_ "void"
 
+//Asignacion de valores de macros principales
 #define __INT__ 1
 #define __FLOAT__ 2
 #define __BOOL__ 3
 #define __Empty__ 0
 #define __VOID__ 0
-
 #define __EMPTY_SCOPE__ 0
 
+//Definicion de macros secundarios
 #define _HEADER_ "HEADER"
 #define _Descs_ "Descs"
 #define _Desc_ "Desc"
@@ -57,7 +54,7 @@
 #define _Para_Def_ "ParaDef"
 #define _Fun_Def_ "FunDef"
 
-
+//Asignacion de valores de macros secundarios
 #define __HEADER__ 11
 #define __Descs__ 12
 #define __Desc__ 13
@@ -86,8 +83,10 @@
 
 using namespace std;
 
+//Crear tipo de dato
 typedef pair<int, string> Parameter;
 
+//Crear objeto de mapa para el tipo
 map<int, string> TYPE = {
     {__INT__, _INT_},
     {__FLOAT__, _FLOAT_},
@@ -95,6 +94,7 @@ map<int, string> TYPE = {
     {__VOID__, _VOID_},
 };
 
+//Crear objeto de mapa para el tipo en mapa
 map<string, int> TYPE_MAP = {
     {_INT_, __INT__},
     {_FLOAT_, __FLOAT__},
@@ -102,6 +102,7 @@ map<string, int> TYPE_MAP = {
     {_VOID_, __VOID__},
 };
 
+//Crear objeto de mapa para el simbolo del mapa
 map<string, int> SYMBOL_MAP = {
     {_HEADER_, __HEADER__},
     {_Descs_, __Descs__},
@@ -133,6 +134,7 @@ map<string, int> SYMBOL_MAP = {
     {_Para_Def_, __Para_Def__},
 };
 
+//Crear lista de palabras reservadas/clave
 const vector<string> KEY_WORDS = {
     "main", "include", "void", "return",
     "int", "bool", "float", "double","char","string",
@@ -151,9 +153,9 @@ const vector<string> KEY_WORDS = {
     "//",
     
     "Id",
-    "Decimal_Number", //十进制
-    "Hexademical_Number", //十六进制
-    "Octal_Number", //八进制
+    "Decimal_Number", 
+    "Hexademical_Number", 
+    "Octal_Number", 
     "Float_Number",
     "String_Constant",
     
@@ -163,8 +165,10 @@ const vector<string> KEY_WORDS = {
     
 };
 
+//Crear objeto de mapa para las palabras reservadas/clave
 map<string, int> KEY_WORDS_MAP;
 
+//Crear lista de operadores y procedencia
 map<string, int> Op_Precedence = {
     {"||", 10},
     {"&&", 20},
@@ -186,8 +190,4 @@ map<string, int> Op_Precedence = {
     {"%", 100}
 };
 
-
 #endif /* Defitions_h */
-
-
-
