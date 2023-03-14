@@ -1,6 +1,5 @@
 //  main.cpp
-//  CompilerProject3
-//  Created by PatrickDD on 2021/5/10.
+//  Analizador Semantico
 
 #include "LexicalAnalyzer.h"
 #include "GrammarAnalyzer.h"
