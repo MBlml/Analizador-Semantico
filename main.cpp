@@ -6,7 +6,7 @@
 #include "SemanticAnalyzer.h"
 
 int main(int argc, const char * argv[]) {
-    LexicalAnalyzer lex("codigo_fuente.txt");
+    LexicalAnalyzer lex("codigo_prueba.txt");
     GrammarAnalyzer grammar(lex.lex_result);
     grammar.draw_AST("AST.txt");
 

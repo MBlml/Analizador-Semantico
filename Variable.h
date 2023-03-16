@@ -29,6 +29,9 @@ public:
             case __BOOL__:
                 stream << (val>0?"true":"false");
                 break;
+            case __CHAR__:
+                stream << char(val);
+                break;
                 
             default:
                 break;

@@ -60,9 +60,11 @@ int main(){
     int t = --a;
     
     // la variable "c" no ha sido definida
-    c = a;
-    
+    c = a; 
     
 }
+
+
+
 
 

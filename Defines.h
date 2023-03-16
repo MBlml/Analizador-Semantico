@@ -14,12 +14,14 @@
 #define _INT_ "int"
 #define _FLOAT_ "float"
 #define _BOOL_ "bool"
+#define _CHAR_ "char"
 #define _VOID_ "void"
 
 //Asignacion de valores de macros principales
 #define __INT__ 1
 #define __FLOAT__ 2
 #define __BOOL__ 3
+#define __CHAR__ 4
 #define __Empty__ 0
 #define __VOID__ 0
 #define __EMPTY_SCOPE__ 0
@@ -91,6 +93,7 @@ map<int, string> TYPE = {
     {__INT__, _INT_},
     {__FLOAT__, _FLOAT_},
     {__BOOL__, _BOOL_},
+    {__CHAR__, _CHAR_},
     {__VOID__, _VOID_},
 };
 
@@ -99,6 +102,7 @@ map<string, int> TYPE_MAP = {
     {_INT_, __INT__},
     {_FLOAT_, __FLOAT__},
     {_BOOL_, __BOOL__},
+    {_CHAR_, __CHAR__},
     {_VOID_, __VOID__},
 };
 
