@@ -1,59 +1,65 @@
-// define function without parameters
+int add(int a, int b, int c) {
+	a = 5;
+	b = 10;
+ 	c = a + b;
+ 	return c;
+}
+
+//definir funcion sin parametros
 void g(){
     int x= 1;
 }
 
-//define function with two parameters
+//definir funcion con dos parametros
 int f(int a, int b){
     int t = a*b;
     return t+a+b;
 }
 
-// error : redefinition of function 'f'
+// redefinicion de la funcion "f" (error)
 int f(){
     return 0;
 }
 
-// global variables : a, x
+// variables globales: a, x
 int a = 11+99;
 float x = 1.19;
 
-
-
+// funcion principal con varios errores a proposito
 int main(){
-    // you can still create the variable 'a' in another scope
+    // se puede seguir creando la variable 
     int a = 9900;
     bool s = true;
     bool ss = s;
     
-    //error : redefinition of variable 'a'
+    // redefinicion de la variable "a" (error)
     int a = 0;
     
-    // error : cannot assign variable 'a'(int) as float
+    // no se puede asignar un valor flotante a variable entera "a" (error)
     a = 1.11;
     
-    // 'x--' makes x = 1.19 - 1 = 0.19, but in calculation of 'y' serves as 1.19(old value)
+    // 'x--' obtiene x = 1.19 - 1 = 0.19, pero en el calculo de 'y' teniendo como 1.19(old value)
     float y = (x--)+11.9;
     
-    // step into another scope
+    // pasando al otro bloque
     if(true){
-        // declare variable b, assign it as the result of RHS(based on precedence of different operators)
+        // declaracion de la variable "b", asignando el resultado como RHS(basando en operadores de diferente procedencia)
         int b = a-10000+(98*2);
     }
     // bool calculation
     bool h = 1>(2*3+4+a);
     
-    //error : calculation between 'bool' and 'int' is illegal
+    // imposible operar un flotante y un entero (error)
     h = 1+true;
     
     int y = (1+2 ;
     y = 2+;
     y = 2 3;
     
-    // '--a' makes a = 9900 - 1 = 9989, but in calculation of 't' serves as 9990(new value)
+    // '--a' obtiene a = 9900 - 1 = 9989, pero en el calculo de 't' tiene como valor 9990(nuevo valor)
     int t = --a;
     
-    //error : variable 'c' is not defined
+    // la variable "c" no ha sido definida
     c = a;
     
     
