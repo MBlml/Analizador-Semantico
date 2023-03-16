@@ -401,7 +401,7 @@ private:
         
         // error : illegal statement
         else{
-            check_add(Stmt, "Statement Word");
+            check_add(Stmt, "Palabra de declaración");
             cur++;
         }
         return Stmt;
@@ -668,7 +668,7 @@ private:
         }
         else{
             //error
-            check_add(Factor, "Expression");
+            check_add(Factor, "Expresión");
         }
         return Factor;
         
