@@ -134,7 +134,7 @@ private:
         while(cur+n < code.length()){
             
             if(code[cur+n] == '\n'){
-                printf("[ERROR] constante de cadena no calificada '%s' at fila [%d] col[%d-%d]\n", code.substr(cur, n).c_str() ,row, col, col+n-1);
+                printf("[ERROR] constante de cadena no calificada '%s' como fila [%d] col[%d-%d]\n", code.substr(cur, n).c_str() ,row, col, col+n-1);
                break;
             }
             

@@ -1,4 +1,35 @@
-PROGRAM-HEADER--H_Stmts-H_Stmt--FunDef--Type----void    
+PROGRAM-HEADER--H_Stmts-H_Stmt--FunDef--Type----int     
+                                        FunName-add     
+                                        (       
+                                        ParasDefParaDef-Type----int     
+                                                        Id------a       
+                                                ,       
+                                                ParaDef-Type----int     
+                                                        Id------b       
+                                                ,       
+                                                ParaDef-Type----int     
+                                                        Id------c       
+                                        )       
+                                        Block---{       
+                                                Stmts---Stmt----Asig_E--Id------a       
+                                                                        =       
+                                                                        Factor--Decimal_Number5       
+                                                                ;       
+                                                        Stmt----Asig_E--Id------b       
+                                                                        =       
+                                                                        Factor--Decimal_Number10      
+                                                                ;       
+                                                        Stmt----Asig_E--Id------c       
+                                                                        =       
+                                                                        Expr----Factor--Id------a       
+                                                                                +       
+                                                                                Factor--Id------b       
+                                                                ;       
+                                                        Stmt----RETURN--return  
+                                                                        Factor--Id------c       
+                                                                ;       
+                                                }       
+                        H_Stmt--FunDef--Type----void    
                                         FunName-g       
                                         (       
                                         ParasDef
